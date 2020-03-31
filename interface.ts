@@ -15,29 +15,29 @@ export interface IDockerImage {
 
 
 export interface IDocker {
-  /** 沙箱的名字 */
+  /** Docker的名字 */
   name: string;
-  /** 沙箱导出的代理实体 */
+  /** Docker导出的代理实体 */
   proxy: WindowProxy;
-  /** 沙箱是否在运行中 */
+  /** Docker是否在运行中 */
   dockerRunning: boolean;
-  
+  /** Docker检查 */
   docker_check(): void;
-
+  /** Docker拉取image */
   docker_pull(): void;
-
+  /** Docker删除 */
   docker_rm(): void;
-
+  /** 获取Docker正在使用的镜像 */
   docker_images(): IDockerImage[];
-
+  /** Docker ps */
   docker_ps(): string[];
-
+  /** 运行Docker */
   docker_run(): void;
-
+  /** Docker执行命令 */
   docker_exec(): string;
-
+  /** Docker log */
   docker_logs(): string;
-
+  
   docker_commit(): void;
 
 }
